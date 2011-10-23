@@ -92,11 +92,17 @@ class quintago(board):
             if not return_value[0]:
                 continue    
             elif return_value[1]==-1:
+                print row
                 minus_one = True
             elif return_value[1]==1:
+                print row
                 positive_one=True
+
+        print minus_one
+        print positive_one
         
-        if not minus_one and not positive_one:
+        if (not minus_one) and (not positive_one):
+            print "Helooooo"
             return 0                
         elif minus_one and positive_one:
             return 2
@@ -104,6 +110,8 @@ class quintago(board):
             return -1
         elif positive_one:
             return 1
+        else:
+            raise Exception("Well, somebody fucked up thier logic")
          
             
 
@@ -132,24 +140,6 @@ class quintago(board):
             
         return(False,0)
                     
-            
-        
-        
-"""
-    def get_quadrant(self, number):
-        if number not in [1,2,3,4]:
-            raise Exception("You can only choose a quadrant with [1,2,3,4] as value")
-        
-        #quadrant = zeros(shape(3,3),dtype='int')
-        if number == 1:
-        	return self.board[0:3,0:3]
-    	elif number == 2:
-    		return self.board[0:3,3:6]
-    	elif number == 3:
-    		return self.board[3:6,0:3]
-    	else:
-    		return self.board[3:6,3:6]
-    		"""
         
         
         

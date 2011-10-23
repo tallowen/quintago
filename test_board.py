@@ -1,4 +1,8 @@
-def runnerfoo(board):
+import nose
+import quint
+
+def test_working():
+    board = quint.quintago()
     board.set(0,0,True)
     board.set(1,0,True)
     board.set(2,0,True)
@@ -11,13 +15,13 @@ def runnerfoo(board):
     board.set(3,3,False)
     board.set(4,4,False)
     board.set(5,5,False)
-    
-    print 2*'\n'
-    print "Tie game test"
+
     print board
-    print sanitize(board.winner())
+    assert board.winner()==2
     
-def test_wierd_diagonal(board):
+def test_wierd_diagonal():
+    board = quint.quintago()
+
     board.set(0,0,True)
     board.set(1,0,True)
     board.set(2,0,True)
@@ -31,26 +35,24 @@ def test_wierd_diagonal(board):
     board.set(3,2,False)
     board.set(4,1,False)
     
-    print 2*'\n'
-    print "Wierd diagonal win"
     print board
-    print sanitize(board.winner())
+    assert board.winner()==2
     
     
-def test_nobody_has_won(board):
+def test_nobody_has_won():
+    board = quint.quintago()
     board.set(0,0,True)
     board.set(1,0,True)
     board.set(2,0,False)
     board.set(5,0,True)
     board.set(5,1,True)
     board.rotate(3,True)
-    
-    print 2*'\n'
-    print "Nobody has won"
+
     print board
-    print sanitize(board.winner())
+    assert board.winner()==0
     
-def one_has_won(board):
+def test_one_has_won():
+    board = quint.quintago()
     board.set(0,0,True)
     board.set(1,0,True)
     board.set(2,0,True)
@@ -58,10 +60,8 @@ def one_has_won(board):
     board.set(5,1,True)
     board.rotate(3,True)
     
-    print 2*'\n'
-    print "Player positive one has won"
     print board
-    print sanitize(board.winner())
+    assert board.winner()==1
     
     
 def sanitize(code):
@@ -75,7 +75,7 @@ def sanitize(code):
         return "1 wins!"
     
     
-    
+'''  
 
 if __name__ == "__main__":
     import quint
@@ -87,4 +87,6 @@ if __name__ == "__main__":
     test_wierd_diagonal(board2)
     test_nobody_has_won(board3)
     one_has_won(board4)
+
+'''
     
