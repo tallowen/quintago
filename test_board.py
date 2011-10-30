@@ -74,19 +74,3 @@ def sanitize(code):
     elif code ==1:
         return "1 wins!"
     
-    
-'''  
-
-if __name__ == "__main__":
-    import quint
-    board = quint.quintago()
-    board2 = quint.quintago()
-    board3 = quint.quintago()
-    board4 = quint.quintago()
-    runnerfoo(board)
-    test_wierd_diagonal(board2)
-    test_nobody_has_won(board3)
-    one_has_won(board4)
-
-'''
-    
